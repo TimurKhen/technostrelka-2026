@@ -92,8 +92,52 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        position: relative;
+
+        a {
+          img {
+            height: $size-20;
+            filter: invert(1);
+            position: absolute;
+            right: $size-8;
+            bottom: $size-8;
+          }
+
+          color: $color-gray;
+        }
       }
     }
+  }
+  .scroll-container {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar { display: none; }
+    scrollbar-width: none;
+
+    .images {
+      width: 100vw;
+      display: flex;
+      gap: $size-12;
+      padding: $size-12;
+      overflow: scroll;
+      height: $size-240;
+
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        border-radius: $radius-lg;
+      }
+    }
+  }
+
+  h2 {
+    color: black;
   }
 }
 
@@ -107,5 +151,44 @@
   to {
     opacity: 0.3;
     transform: translateY(0) rotate(0deg);
+  }
+}
+
+
+app-popup {
+  position: relative;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: $size-20;
+
+    .close {
+      background: $color-gray;
+      border: none;
+      outline: none;
+
+      height: 4dvh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: $size-20;
+
+      color: $color-white;
+      font-size: 1em;
+      border-radius: $radius-lg;
+
+      img {
+        rotate: 45deg;
+      }
+    }
+
+    img {
+      max-width: 90vw;
+      max-height: 80vh;
+      display: block;
+      border-radius: $radius-lg;
+    }
   }
 }

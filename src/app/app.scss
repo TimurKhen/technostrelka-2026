@@ -1,6 +1,17 @@
 @import "variables";
 
+app-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: $size-12;
+
+  position: sticky;
+  top: $size-12;
+  left: 0;
+  z-index: 1000;
+}
+
 .container {
-  margin-top: $size-40;
+  margin-top: $size-32;
   // margin-bottom: $size-60;
 }

@@ -11,19 +11,19 @@ app-block {
     align-items: center;
     max-height: 80dvh;
     aspect-ratio: 1/1;
+    border-radius: $radius-lg;
+    overflow: hidden;
 
     .text {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       position: absolute;
-
       display: flex;
       justify-content: center;
-
       text-align: center;
-
       font-size: 1.2em;
+      z-index: 9999;
 
       h1 {
         font-weight: bolder;
@@ -34,8 +34,24 @@ app-block {
     .background {
       width: 100%;
       height: 100%;
-      background-image: linear-gradient(var(--angle), $color-light-blue, $color-purple);
+      background-image: linear-gradient(var(--angle), $color-yellow, $color-orange);
       animation: rotateGradient 15s linear infinite;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+      }
+
+      .bg-1 {
+        left: 0;
+        top: 0;
+      }
+
+      .bg-2 {
+        right: calc($size-80 * -1);
+        bottom: calc($size-80 * -1);
+      }
     }
   }
 

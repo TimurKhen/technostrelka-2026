@@ -1,24 +1,27 @@
 @import 'variables';
 
 .nav {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: $size-120;
+  width: 90%;
+  height: $size-60;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 $size-12;
-  z-index: 9999;
-  background: $color-light-gray;
+  background: $color-light-orange;
+  border-radius: $radius-lg;
+  color: #272727;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
 
   .logo {
-    height: 100%;
-    height: $size-80;
+    height: 90%;
 
     img {
       height: 100%;
     }
   }
+}
+
+.nav-hidden {
+  transform: translateY(-50dvh);
 }

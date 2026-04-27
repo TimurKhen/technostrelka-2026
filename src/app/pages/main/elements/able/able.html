@@ -1,16 +1,17 @@
-<app-block>
-  <div class="able block">
-    <div class="text">
-      <p class="head">Возможности центра</p>
-      <div class="able-text">
+<app-block [title]="'Возможности центра'">
+  <div class="block">
+    <div class="content">
+      <div class="box">
         <h1>У нас есть: </h1>
-        <h1 #currentAbility>Снеки</h1>
+        <h1 class="what-good" #currentAbility>Снеки</h1>
       </div>
-    </div>
 
-    <a class="link" href="">
-      Подробнее
-      <img src="icons/strelka.svg">
-    </a>
+      <a class="link" href="/center">
+        <div class="more">
+          <img src="icons/strelka.svg">
+            Подробнее
+        </div>
+      </a>
+    </div>
   </div>
 </app-block>

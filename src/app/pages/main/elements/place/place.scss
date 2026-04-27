@@ -4,67 +4,47 @@
 app-block {
   @include appBlock;
 
+  .block {
+    width: 100%;
+    overflow: hidden;
+    height: $size-160;
+  }
+
+  a {
+    width: 100%;
+  }
+
   .place {
+    z-index: 99;
     padding: $size-12;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    // background: $color-light-blue;
+    position: relative;
 
-    background: $color-light-blue;
+    background-image: url('/bg/map.png');
+    background-size: cover;
+    color: black;
 
-    .icon {
-      width: 100%;
-      height: 100%;
+    .text {
       display: flex;
-      justify-content: start;
+      gap: $size-8;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      p {
+        margin: 0;
+        font-weight: 900;
+        font-size: 1.1em;
+        line-height: 0.8lh;
+      }
 
       img {
-        width: 100%;
-        object-fit: contain;
+        width: $size-20;
+        filter: invert(1);
       }
     }
 
-    .right {
-      height: 100%;
-
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: $size-24;
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: $size-8;
-
-        .head {
-          margin: 0;
-          background: $color-blue;
-          padding: $size-16;
-          border-radius: $radius-full;
-          line-height: 0.5lh;
-        }
-
-        p {
-          line-height: 0.5lh;
-        }
-      }
-
-      .link {
-        display: flex;
-        align-items: center;
-        gap: $size-8;
-        height: 1.5em;
-
-        font-size: 0.9em;
-
-        font-weight: 900;
-
-        img {
-          height: 100%;
-        }
-      }
-    }
   }
 }

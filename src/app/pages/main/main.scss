@@ -14,9 +14,9 @@
   width: 100%;
   height: 100%;
 
-  gap: $size-12;
+  gap: $size-40;
 
-  app-start, app-place, app-able, app-what-will-be, app-contacts, app-review {
+  app-start, app-place, app-what-will-be, app-contacts, app-review {
     width: 90%;
   }
 
@@ -24,7 +24,7 @@
     height: $size-120;
   }
 
-  app-life-in, app-faq {
+  app-life-in, app-faq, app-able {
     width: 100%;
   }
 }

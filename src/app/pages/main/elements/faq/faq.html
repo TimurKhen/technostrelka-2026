@@ -1,7 +1,5 @@
-<app-block>
+<app-block title="FAQ">
   <div class="contacts block-faq">
-    <p class="head">FAQ:</p>
-
     <div class="questions">
       @for (item of faqs; track item; let i = $index) {
         <div class="question" [class.open]="isOpen(i)" (click)="toggle(i)">

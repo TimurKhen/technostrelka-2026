@@ -16,13 +16,57 @@
   <div class="abilities-container">
     <h1>Возможности</h1>
     <div class="abilities">
-      @for (item of abilities; track item) {
+      @for (item of abilities; track item.name) {
         <div class="ability">
-          <h3>{{ item }}</h3>
+          @if (item.link) {
+            <a [href]="item.link" target="_blank">
+              <h3>{{ item.name }}</h3>
+              @if (item.icon) {
+                <img [src]="item.icon" alt="Иконка">
+              }
+            </a>
+          } @else {
+            <h3>{{ item.name }}</h3>
+          }
         </div>
       }
     </div>
   </div>
 
   <app-life-in></app-life-in>
+
+  <h2>Фото</h2>
+  <div class="scroll-container">
+    <div class="images">
+      @for (photo of photos; track $index) {
+        <img
+          src="photos/{{ photo }}.jpeg" alt="Фото {{ photo }}"
+          loading="lazy" (click)="openPhoto(photo)">
+      }
+    </div>
+  </div>
+
+
+  <div class="review-container">
+
+  </div>
 </div>
+
+<app-popup
+  [isShow]="!!selectedPhoto()"
+  (close)="selectedPhoto.set(null)">
+
+    @if (selectedPhoto()) {
+      <div class="content">
+        <img
+          src="photos/{{ selectedPhoto() }}.jpeg"
+        >
+
+        <button class="close" (click)="closePhoto()">
+          <p>Закрыть</p>
+          <img src="icons/add-icon.svg">
+        </button>
+      </div>
+    }
+
+</app-popup>

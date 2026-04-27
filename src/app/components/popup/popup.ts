@@ -1,11 +1,17 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
-  selector: 'vo-popup',
+  selector: 'app-popup',
   imports: [],
   templateUrl: './popup.html',
   styleUrl: './popup.scss',
 })
-export class VoPopup {
+export class Popup {
   isShow = input<boolean>(false)
+
+  close = output<void>()
+
+  onClose() {
+    this.close.emit()
+  }
 }

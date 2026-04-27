@@ -5,20 +5,12 @@ app-block {
   @include appBlock;
 
   .contacts {
-    padding: $size-12;
+    padding: $size-20;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
-    background: $color-light-blue;
-
-    .head {
-      margin: 0;
-      background: $color-blue;
-      padding: $size-16;
-      border-radius: $radius-full;
-      line-height: 0.5lh;
-    }
+    background: $color-orange;
 
     .persons {
       width: 100%;
@@ -47,10 +39,6 @@ app-block {
         border-radius: $radius-full;
         background: $color-white;
         opacity: 0.15;
-      }
-
-      .header {
-        color: $color-light-gray;
       }
     }
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-block',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './block.scss',
 })
 export class Block {
-
+  title = input<string | null>(null)
 }

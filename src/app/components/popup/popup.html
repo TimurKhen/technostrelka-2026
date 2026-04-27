@@ -1,6 +1,6 @@
 @if (isShow()) {
-    <div class="popup-container" animate.enter="show">
-        <div class="popup">
+    <div class="popup-container" (click)="onClose()">
+        <div class="popup" [class.show]="isShow()" (click)="$event.stopPropagation()">
             <ng-content></ng-content>
         </div>
     </div>
