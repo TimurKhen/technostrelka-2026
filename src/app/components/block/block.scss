@@ -1,0 +1,11 @@
+@import 'variables';
+
+.block {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}

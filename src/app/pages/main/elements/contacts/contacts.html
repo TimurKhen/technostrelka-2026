@@ -1,0 +1,21 @@
+<app-block>
+  <div class="contacts block">
+    <p class="head">К кому я могу обратиться:</p>
+
+    <div class="persons">
+      <div class="person header">
+        <p>ФИО</p>
+        <p>Telegram</p>
+      </div>
+      <hr class="header-hr">
+
+      @for (item of contacts; track item) {
+        <div class="person">
+          <p>{{ item.fio }}</p>
+          <p>@{{ item.telegram }}</p>
+        </div>
+        <hr>
+      }
+    </div>
+  </div>
+</app-block>

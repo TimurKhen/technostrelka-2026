@@ -1,0 +1,9 @@
+@import 'variables';
+
+@mixin appBlock {
+  width: 90%;
+
+  .block {
+    width: 100%;
+  }
+}

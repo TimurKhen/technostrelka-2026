@@ -1,0 +1,57 @@
+@import '../app-block-styles.scss';
+@import 'variables';
+
+app-block {
+  @include appBlock;
+
+  .contacts {
+    padding: $size-12;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: $color-light-blue;
+
+    .head {
+      margin: 0;
+      background: $color-blue;
+      padding: $size-16;
+      border-radius: $radius-full;
+      line-height: 0.5lh;
+    }
+
+    .persons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .person {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          font-size: 1.2em;
+        }
+      }
+
+      .header-hr {
+        height: $size-4;
+      }
+
+      hr {
+        width: 100%;
+        border-radius: $radius-full;
+        background: $color-white;
+        opacity: 0.15;
+      }
+
+      .header {
+        color: $color-light-gray;
+      }
+    }
+  }
+}

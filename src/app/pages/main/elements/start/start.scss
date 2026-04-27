@@ -1,0 +1,42 @@
+@import '../app-block-styles.scss';
+@import 'variables';
+
+app-block {
+  @include appBlock;
+
+  .start {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 80dvh;
+    aspect-ratio: 1/1;
+
+    .text {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+
+      display: flex;
+      justify-content: center;
+
+      text-align: center;
+
+      font-size: 1.2em;
+
+      h1 {
+        font-weight: bolder;
+        width: 100%;
+      }
+    }
+
+    .background {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(var(--angle), $color-light-blue, $color-purple);
+      animation: rotateGradient 15s linear infinite;
+    }
+  }
+
+}

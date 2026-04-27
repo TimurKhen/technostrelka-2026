@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="head">
+    <h1>Жизнь в центре</h1>
+  </div>
+  <div class="abilities">
+    @for (item of abilities; track item) {
+
+      <div class="ability" appViewportAnimation>
+        <h2>{{ item }}</h2>
+      </div>
+    }
+  </div>
+</div>
