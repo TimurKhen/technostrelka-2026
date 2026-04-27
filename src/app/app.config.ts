@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 registerLocaleData(localeRu)
 
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     { provide: LOCALE_ID, useValue: 'ru' },
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimationsAsync()
   ]
 };
