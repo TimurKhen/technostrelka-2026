@@ -8,10 +8,15 @@ import { WhatWillBe } from "./elements/what-will-be/what-will-be";
 import { Contacts } from "./elements/contacts/contacts";
 import { Faq } from "./elements/faq/faq";
 import { Review } from "./elements/review/review";
+import { ViewportAnimationDirective } from '../../directives/viewport-animation';
 
 @Component({
   selector: 'app-main',
-  imports: [Block, Place, Start, Able, LifeIn, WhatWillBe, Contacts, Faq, Review],
+  imports: [Block,
+    Place, Start, Able, LifeIn,
+    WhatWillBe, Contacts, Faq, Review,
+    ViewportAnimationDirective
+  ],
   templateUrl: './main.html',
   styleUrl: './main.scss',
 })

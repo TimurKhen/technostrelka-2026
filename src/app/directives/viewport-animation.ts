@@ -17,9 +17,6 @@ export class ViewportAnimationDirective implements OnInit, OnDestroy {
         if (entry.isIntersecting) {
           this.renderer.setStyle(this.el.nativeElement, 'opacity', '1')
           this.renderer.setStyle(this.el.nativeElement, 'transform', 'translateY(0)')
-        } else {
-          this.renderer.setStyle(this.el.nativeElement, 'opacity', '0')
-          this.renderer.setStyle(this.el.nativeElement, 'transform', 'translateY(20px)')
         }
       })
     }, { threshold: 0.1 })
