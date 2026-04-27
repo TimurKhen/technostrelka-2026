@@ -1,0 +1,34 @@
+@import 'variables';
+@import '../contentStyles.scss';
+
+.container {
+    @include centerSettings;
+    flex-direction: column;
+    gap: $size-20;
+
+    .content {
+        @include contentStyles;
+
+        .logo {
+            @include logoStyles;
+        }
+
+        .inputs {
+            @include inputsStyles;
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    .back {
+        background: $color-surface-dark;
+    }
+    
+    button {
+        @include buttonStyles;
+    }
+}

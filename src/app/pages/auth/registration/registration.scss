@@ -1,0 +1,63 @@
+@import 'variables';
+@import '../contentStyles.scss';
+
+.container {
+    @include centerSettings;
+    flex-direction: column;
+    gap: $size-20;
+
+    .content {
+        @include contentStyles;
+
+        .logo {
+            @include logoStyles;
+        }
+
+        .inputs {
+            @include inputsStyles;
+            
+            .avatar-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: $size-8;
+                margin-bottom: $size-12;
+
+                .avatar-placeholder, .avatar {
+                    width: 32vw;
+                    height: 32vw;
+                    max-width: $size-120;
+                    max-height: $size-120;
+                    background: $color-gray;
+                    border-radius: $radius-full;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: $radius-full;
+                    }
+                }
+            }
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    .back {
+        background: $color-surface-dark;
+    }
+    
+    button {
+        @include buttonStyles;
+    }
+}
