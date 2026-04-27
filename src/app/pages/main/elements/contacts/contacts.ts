@@ -15,12 +15,16 @@ interface fioAndTelegram {
 export class Contacts {
   contacts: fioAndTelegram[] = [
     {
-      'fio': 'Романов Илья II',
-      'telegram': 'gshorti'
+      'fio': 'Иванова Александра',
+      'telegram': 'user'
     },
     {
-      'fio': 'Медведев Дмитрий Анатольевич',
-      'telegram': 'gshorti'
+      'fio': 'Смирнов Михаил',
+      'telegram': 'user'
+    },
+    {
+      'fio': 'Кузнецова Ирина',
+      'telegram': 'user'
     }
   ]
 }

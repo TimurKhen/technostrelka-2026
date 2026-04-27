@@ -1,0 +1,21 @@
+<app-block>
+  <div class="contacts block-faq">
+    <p class="head">FAQ:</p>
+
+    <div class="questions">
+      @for (item of faqs; track item; let i = $index) {
+        <div class="question" [class.open]="isOpen(i)" (click)="toggle(i)">
+          <div class="question-header">
+            <p>{{ item.question }}</p>
+            <span class="chevron">&#8250;</span>
+          </div>
+
+          <div class="answer">
+            <p>{{ item.answer }}</p>
+          </div>
+        </div>
+        <hr>
+      }
+    </div>
+  </div>
+</app-block>

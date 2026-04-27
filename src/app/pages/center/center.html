@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="place">
+    <p>Наш адрес:</p>
+    <h1>Нижний Новгород, Костина 6</h1>
+  </div>
+  <div class="mission">
+    <p>Наша миссия</p>
+    <h3>
+      Мы создаем решения для развития бизнеса
+      через исследования клиентского опыта,
+      анализ данных, применяя креативный подход
+      и современные технологии.
+    </h3>
+  </div>
+
+  <div class="abilities-container">
+    <h1>Возможности</h1>
+    <div class="abilities">
+      @for (item of abilities; track item) {
+        <div class="ability">
+          <h3>{{ item }}</h3>
+        </div>
+      }
+    </div>
+  </div>
+
+  <app-life-in></app-life-in>
+</div>
