@@ -1,5 +1,6 @@
 import { Component, computed, signal } from '@angular/core'
 import loyalties from '../../../../public/loyalties.json'
+import { ViewportAnimationDirective } from '../../directives/viewport-animation'
 
 interface LoyaltyInterface {
   name: string,
@@ -15,14 +16,13 @@ interface LoyaltyInterface {
 
 @Component({
   selector: 'app-loyalty',
-  imports: [],
+  imports: [ViewportAnimationDirective],
   templateUrl: './loyalty.html',
   styleUrl: './loyalty.scss',
 })
 export class Loyalty {
   allLoyalty: LoyaltyInterface[] = loyalties
 
-  // Храним массив выбранных категорий
   selectedCategories = signal<string[]>(['Все'])
 
   categories = computed(() => {

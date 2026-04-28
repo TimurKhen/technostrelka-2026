@@ -13,6 +13,7 @@ import {
 } from '@angular/material/bottom-sheet';
 import { RatingComponent } from "../../components/rating/rating.component";
 import { ViewportAnimationDirective } from '../../directives/viewport-animation';
+import { NgClass } from '@angular/common';
 
 interface Ability {
   name: string;
@@ -28,8 +29,7 @@ const sportHallLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A
   selector: 'app-center',
   imports: [WhatWillBe, LifeIn, Popup, ReviewCreate,
     Review, MatBottomSheetModule, RatingComponent,
-    ViewportAnimationDirective
-  ],
+    ViewportAnimationDirective, NgClass],
   templateUrl: './center.html',
   styleUrl: './center.scss',
 })
@@ -49,9 +49,18 @@ export class Center implements OnInit {
   ]
 
   photos = ['1', '2', '3', '4']
+  isRated = signal<boolean>(false)
   selectedPhoto = signal<string | null>(null)
   rating = signal<number>(5)
   currentStars = signal<number>(0)
+
+  ngOnInit(): void {
+    this.getReviews();
+    const rated = localStorage.getItem('user-rated');
+    if (rated) {
+      this.isRated.set(true);
+    }
+  }
 
   openPhoto(photo: string) {
     this.selectedPhoto.set(photo)
@@ -87,9 +96,5 @@ export class Center implements OnInit {
       this.reviews.set(val.reviews)
       this.rating.set(val.average)
     })
-  }
-
-  ngOnInit(): void {
-    this.getReviews()
   }
 }

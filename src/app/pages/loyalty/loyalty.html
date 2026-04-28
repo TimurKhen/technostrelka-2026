@@ -17,11 +17,11 @@
   <div class="programm">
     @for (group of filteredGroups(); track group[0]) {
       <div class="group-section">
-        <h1 class="group-title">{{ group[0] }}</h1>
+        <h1 class="group-title" appViewportAnimation>{{ group[0] }}</h1>
 
         <div class="cards-grid">
           @for (item of group[1]; track item.name) {
-            <label class="loyalty">
+            <label class="loyalty" appViewportAnimation>
               <h2>{{ item.name }}</h2>
               <p>{{ item.text }}</p>
 

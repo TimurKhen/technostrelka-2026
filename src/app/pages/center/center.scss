@@ -150,7 +150,6 @@
     .review-create {
       scroll-margin-top: -10rem;
       width: 90%;
-      padding: $size-20;
       background: $color-gray;
 
       display: flex;
@@ -160,6 +159,29 @@
 
       border-radius: $radius-lg;
       padding: $size-20;
+
+      .thanks-message {
+        text-align: center;
+        padding: $size-20;
+        border-radius: $radius-lg;
+
+        h2 {
+          color: $color-white;
+          font-size: 1.5em;
+          font-weight: 900;
+          margin: 0;
+        }
+
+        p {
+          font-size: 1em;
+          margin-top: $size-12;
+          color: $color-white;
+        }
+      }
+    }
+
+    .orange {
+      background: $color-orange;
     }
 
     p {

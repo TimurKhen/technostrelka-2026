@@ -50,9 +50,19 @@
   <div class="review-container">
     <p>Оценка и отзывы</p>
     <h2 appViewportAnimation>{{ rating() }}/5</h2>
-    <div id="reviews" class="review-create">
-      Оцените и напишите отзыв
-      <app-rating [currentStarInput]="currentStars()" (starsCountChanged)="rate($event)"></app-rating>
+    <div id="reviews" class="review-create" [ngClass]="{'orange': isRated()}">
+      @if (isRated()) {
+        <div class="thanks-message">
+          <h2>Спасибо за оценку!</h2>
+          <p>Ваш отзыв появится после подтверждения почты.</p>
+        </div>
+      } @else {
+        Оцените и напишите отзыв
+        <app-rating
+          [currentStarInput]="currentStars()"
+          (starsCountChanged)="rate($event)">
+        </app-rating>
+      }
     </div>
     <div class="reviews">
       @for (item of reviews(); track item) {

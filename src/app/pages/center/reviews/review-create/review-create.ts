@@ -61,7 +61,8 @@ export class ReviewCreate {
         `Проверьте почту ${this.reviewForm.get('email')?.value}`,
         'Отзыв нужно подтвердить по почте',
         false
-      )
+      ),
+      localStorage.setItem('user-rated', 'true')
     })
   }
 
