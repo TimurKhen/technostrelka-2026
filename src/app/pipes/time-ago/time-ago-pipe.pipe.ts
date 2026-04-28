@@ -7,6 +7,7 @@ export class TimeAgoPipe implements PipeTransform {
 
   transform(inputValue: string | undefined): string {
     const value = new Date(inputValue || '')
+    value.setHours(value.getHours() + 3)
 
     if (!value) return ''
 
