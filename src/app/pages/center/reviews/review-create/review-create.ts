@@ -15,7 +15,7 @@ import { RatingService } from '../../../../services/api/rating/rating';
 })
 export class ReviewCreate {
   private ratingService = inject(RatingService)
-
+  maxLength = 250
   closeForm = output<number>()
 
   reviewForm = new FormGroup({
@@ -41,11 +41,13 @@ export class ReviewCreate {
         comment: formValues.comment!,
         mark: this.currentStars()
       }
-    )
+    ).subscribe(() => {
+      this.close(undefined)
+    })
   }
 
-  close($event: Event) {
-    $event.preventDefault()
+  close($event: Event | undefined) {
+    if ($event) $event.preventDefault()
     this.closeForm.emit(this.currentStars())
   }
 }

@@ -23,12 +23,12 @@
         </label>
         <label>
             <p>Отзыв:</p>
-            <textarea maxlength="1000" cols="40" placeholder="Ваш отзыв" formControlName="comment"></textarea>
+            <textarea maxlength="{{ maxLength }}" cols="40" placeholder="Ваш отзыв" formControlName="comment"></textarea>
             <p
                 class="text-count"
                 [ngClass]="{'active': reviewForm.get('comment')?.value?.length}"
                 >
-                {{ reviewForm.get('comment')?.value?.length }} / 1000
+                {{ reviewForm.get('comment')?.value?.length }} / {{ maxLength }}
             </p>
         </label>
       </div>

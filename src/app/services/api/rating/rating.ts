@@ -20,7 +20,7 @@ export class RatingService {
     mark: number
   }) {
 
-    this.http.post(
+    return this.http.post(
       this.rateUrl,
       JSON.stringify(
         inforamtion

@@ -2,6 +2,7 @@
 
 .alert {
     min-width: 30vw;
+    width: 90%;
     min-height: 5vh;
     border: $border-basic;
     border-radius: $radius-lg;
@@ -12,7 +13,7 @@
     padding: $size-12 $size-20;
     background: $color-gray;
     position: fixed;
-    z-index: 99999;
+    z-index: 999999;
     top: $size-12;
     left: 50%;
     transform: translateX(-50%);
