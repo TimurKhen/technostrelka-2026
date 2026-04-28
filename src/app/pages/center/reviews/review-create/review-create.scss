@@ -26,6 +26,15 @@
     }
   }
 
+  .rating {
+    width: 100%;
+    height: $size-60;
+
+    app-rating {
+      height: $size-60;
+    }
+  }
+
   .inputs {
     display: flex;
     flex-direction: column;
