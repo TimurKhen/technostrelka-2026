@@ -19,7 +19,7 @@
       @for (item of abilities; track item.name) {
         <div class="ability">
           @if (item.link) {
-            <a [href]="item.link" target="_blank">
+            <a [href]="item.link" [target]="item.target">
               <h3>{{ item.name }}</h3>
               @if (item.icon) {
                 <img [src]="item.icon" alt="Иконка">

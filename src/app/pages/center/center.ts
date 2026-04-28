@@ -18,6 +18,7 @@ interface Ability {
   name: string;
   link?: string;
   icon?: string;
+  target?: string;
 }
 
 const coworkingSpaceLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A51020482C6E4BFDE05323C6440AA466/RU%2F52%2F416?typeObject=CONFRM_V2&tabValue=list'
@@ -37,13 +38,13 @@ export class Center implements OnInit {
   private rateService = inject(RatingService)
 
   abilities: Ability[] = [
-    { name: 'программа лояльности' },
+    { name: 'программа лояльности', link: '../loyality', icon: './icons/strelka.svg', target: '_self' },
     { name: 'снеки' },
     { name: 'массажное кресло' },
     { name: 'спортзал', link: sportHallLink, icon: './icons/strelka.svg' },
-    { name: 'забронировать коворкинг', link: coworkingSpaceLink, icon: './icons/strelka.svg' },
+    { name: 'забронировать коворкинг', link: coworkingSpaceLink, icon: './icons/strelka.svg', target: '_blank' },
     { name: 'обучения' },
-    { name: 'забронировать переговорну зону', link: coworkingSpaceLink, icon: './icons/strelka.svg' },
+    { name: 'забронировать переговорну зону', link: coworkingSpaceLink, icon: './icons/strelka.svg', target: '_blank' },
     { name: 'удобное расположение' }
   ]
 
