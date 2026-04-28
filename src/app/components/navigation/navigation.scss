@@ -12,6 +12,8 @@
   color: #272727;
   transition: transform 0.3s ease;
   transform: translateY(0);
+  position: relative;
+  z-index: 9999;
 
   .logo {
     height: 90%;

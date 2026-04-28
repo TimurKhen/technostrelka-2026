@@ -37,7 +37,7 @@
 
   <h2>Наш офис</h2>
   <div class="scroll-container">
-    <div class="images">
+    <div id="images" class="images">
       @for (photo of photos; track $index) {
         <img
           src="photos/{{ photo }}.jpeg" alt="Фото {{ photo }}"
@@ -50,7 +50,7 @@
   <div class="review-container">
     <p>Оценка и отзывы</p>
     <h2>{{ rating() }}/5</h2>
-    <div class="review-create">
+    <div id="reviews" class="review-create">
       Оцените и напишите отзыв
       <app-rating [currentStarInput]="currentStars()" (starsCountChanged)="rate($event)"></app-rating>
     </div>

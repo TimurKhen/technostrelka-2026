@@ -11,12 +11,12 @@
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
-} 
+}
 #nav-icon3 span {
     display: block;
     height: vars.$size-4;
     width: 100%;
-    background: #fff;
+    background: #000;
     border-radius: vars.$radius-full;
     opacity: 1;
     left: 0;

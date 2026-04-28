@@ -1,15 +1,18 @@
 import { NgClass } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
+import { MenuOpenerComponent } from "./menu-opener/menu-opener.component";
+import { MobileNavigation } from "../mobile-navigation/mobile-navigation";
 
 @Component({
   selector: 'app-navigation',
-  imports: [NgClass],
+  imports: [NgClass, MenuOpenerComponent, MobileNavigation],
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss',
 })
 export class Navigation {
   isNavVisible: boolean = true;
   private lastScrollTop: number = 0;
+  isMenuOpen = signal<boolean>(false)
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -24,4 +27,7 @@ export class Navigation {
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 
+  isOpenChange($event: boolean) {
+    this.isMenuOpen.set($event)
+  }
 }

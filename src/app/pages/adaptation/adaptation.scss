@@ -31,7 +31,12 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: $size-12;
+        gap: $size-24;
+        padding: $size-12;
+
+        p {
+          margin: 0;
+        }
       }
 
       input[type="checkbox"] {

@@ -17,13 +17,13 @@
       <label class="checkbox-item">
         <input
           type="checkbox"
-          [id]="item.id"
-          [(ngModel)]="item.checked"
-          (change)="saveProgress()"
+          [checked]="item.checked"
+          (change)="toggleTask(item.id)"
         >
         <div class="text-info" [class.completed]="item.checked">
-          <span>{{ item.text }}</span>
+          <p>{{ item.task }}</p>
           <p>День {{ item.day }}</p>
+          <p>Помощник: {{ item.helper }}</p>
         </div>
       </label>
     }

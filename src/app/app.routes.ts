@@ -15,5 +15,9 @@ export const routes: Routes = [
   {
     path: 'adaptation',
     component: Adaptation
+  },
+  {
+    path: 'home',
+    component: Main
   }
 ]
