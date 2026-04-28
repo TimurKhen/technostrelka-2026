@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Block } from "../../../../components/block/block";
+import { Map } from "./map/map";
 
 @Component({
   selector: 'app-place',
-  imports: [Block],
+  imports: [Block, Map],
   templateUrl: './place.html',
   styleUrl: './place.scss',
 })

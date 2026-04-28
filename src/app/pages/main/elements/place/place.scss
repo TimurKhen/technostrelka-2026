@@ -4,10 +4,10 @@
 app-block {
   @include appBlock;
 
-  .block {
+  app-map {
     width: 100%;
+    border-radius: $radius-lg;
     overflow: hidden;
-    height: $size-160;
   }
 
   a {
@@ -25,25 +25,24 @@ app-block {
     background-image: url('/bg/map.png');
     background-size: cover;
     color: black;
+  }
 
-    .text {
-      display: flex;
-      gap: $size-8;
-      align-items: flex-end;
-      justify-content: space-between;
+  .text {
+    width: 100%;
+    display: flex;
+    gap: $size-8;
+    color: black;
 
-      p {
-        margin: 0;
-        font-weight: 900;
-        font-size: 1.1em;
-        line-height: 0.8lh;
-      }
-
-      img {
-        width: $size-20;
-        filter: invert(1);
-      }
+    p {
+      margin: 0;
+      font-weight: 900;
+      font-size: 1.1em;
+      line-height: 0.8lh;
     }
 
+    img {
+      width: $size-20;
+      filter: invert(1);
+    }
   }
 }
