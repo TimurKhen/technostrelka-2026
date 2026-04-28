@@ -31,10 +31,16 @@
         line-height: 1.2;
       }
 
-      app-rating {
-        height: $size-20;
-        flex-shrink: 0;
-        display: block;
+      .rating {
+        padding: $size-12;
+        background: $color-gray;
+        border-radius: $radius-lg;
+
+        app-rating {
+          height: $size-20;
+          flex-shrink: 0;
+          display: block;
+        }
       }
     }
 

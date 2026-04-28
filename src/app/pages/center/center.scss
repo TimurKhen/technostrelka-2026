@@ -150,7 +150,7 @@
 
     .review-create {
       width: 90%;
-      background: $color-gray;
+      background: #f5a47b;
 
       display: flex;
       flex-direction: column;
@@ -163,6 +163,8 @@
       app-rating {
         height: $size-40;
       }
+
+      font-size: 1.2em;
 
       .thanks-message {
         text-align: center;
