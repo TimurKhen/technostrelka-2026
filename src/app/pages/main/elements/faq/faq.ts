@@ -6,6 +6,10 @@ interface faq {
   answer: string
 }
 
+const coworkingSpaceLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A51020482C6E4BFDE05323C6440AA466/RU%2F52%2F416?typeObject=CONFRM_V2&tabValue=list'
+const sportHallLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A51020482C6E4BFDE05323C6440AA466/RU%2F52%2F416?typeObject=SERVICE&tabValue=list&timeZone=&city=%D0%B3+%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9+%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4&categories=000001'
+const eventBotLink = 'https://t.me/HubEventMatch_bot'
+
 @Component({
   selector: 'app-faq',
   imports: [Block],
@@ -16,7 +20,7 @@ export class Faq {
   faqs: faq[] = [
     {
       "question": "Как посетить спортзал?",
-      "answer": "Спортзал работает с 07:00 до 21:00, групповые занятия с 12:00 до 12:50 (запись на групповые занятия по ссылке: Запись в спортзал)."
+      "answer": `Спортзал работает с 07:00 до 21:00, групповые занятия с 12:00 до 12:50 (запись на групповые занятия по ссылке: <a target="_blank" href=${sportHallLink}>Запись в спортзал</a>).`
     },
     {
       "question": "Когда обед?",
@@ -24,7 +28,7 @@ export class Faq {
     },
     {
       "question": "Как забронировать переговорную или коворкинг?",
-      "answer": "Сервис бронирования переговорных/коворкинга по ссылке: Забронировать."
+      "answer": `Сервис бронирования переговорных/коворкинга по ссылке: <a target="_blank" href=${coworkingSpaceLink}>Забронировать.</a>`
     },
     {
       "question": "Что такое период адаптации?",
@@ -32,7 +36,7 @@ export class Faq {
     },
     {
       "question": "Как записаться на мероприятия?",
-      "answer": "Зарегистрируйся в боте в ТГ и получай индивидуальную подборку. Бот предлагает мероприятия специально под ваши интересы: @HubEventMatch_bot."
+      "answer": `Зарегистрируйся в боте в ТГ и получай индивидуальную подборку. Бот предлагает мероприятия специально под ваши интересы: <a target="_blank" href=${eventBotLink}>@HubEventMatch_bot.</a>`
     },
     {
       "question": "Как составить график работы?",

@@ -33,7 +33,7 @@
         </label>
       </div>
     </form>
-    <button class="publish-button" (click)="publish($event)" [disabled]="isLoading || !!reviewForm.valid">
+    <button class="publish-button" (click)="publish($event)" [disabled]="isLoading() || !reviewForm.valid">
       Опубликовать
     </button>
   </div>

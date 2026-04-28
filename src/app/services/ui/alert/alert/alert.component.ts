@@ -17,9 +17,9 @@ export class AlertComponent {
   message = input<string>('')
 
   hide = output()
-  
+
   isShow = signal<boolean>(true)
-  
+
   constructor() {
     this.timeout$
       .pipe(

@@ -2,7 +2,9 @@
   [ngClass]="{ 'nav-hidden': !isNavVisible }"
 >
   <div class="text">
-    <h1>Хаб НН</h1>
+    <a href="/">
+      <h1>Хаб НН</h1>
+    </a>
   </div>
   <div class="navigation">
     <menu-opener [isOpenInput]="isMenuOpen()" (isOpenOutput)="isOpenChange($event)"></menu-opener>

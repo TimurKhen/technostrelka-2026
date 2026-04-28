@@ -34,7 +34,7 @@ export class RatingService {
       catchError((err) => {
         this.alert.show(
           'Ошибка создания отзыва',
-          err.message,
+          'Возможно, такой email уже использован',
           true
         )
 

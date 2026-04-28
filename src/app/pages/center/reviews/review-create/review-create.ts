@@ -6,6 +6,7 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import { NgClass } from '@angular/common';
 import { RatingService } from '../../../../services/api/rating/rating';
 import { catchError, throwError } from 'rxjs';
+import { AlertService } from '../../../../services/ui/alert/alert.service';
 
 @Component({
   selector: 'app-review-create',
@@ -16,6 +17,8 @@ import { catchError, throwError } from 'rxjs';
 })
 export class ReviewCreate {
   private ratingService = inject(RatingService)
+  private alert = inject(AlertService)
+
   maxLength = 250
   closeForm = output<number>()
   isLoading = signal<boolean>(false)
@@ -54,6 +57,11 @@ export class ReviewCreate {
     .subscribe(() => {
       this.isLoading.set(false)
       this.close(undefined)
+      this.alert.show(
+        `Проверьте почту ${this.reviewForm.get('email')?.value}`,
+        'Отзыв нужно подтвердить по почте',
+        false
+      )
     })
   }
 

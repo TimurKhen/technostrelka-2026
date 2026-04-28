@@ -20,6 +20,7 @@ interface Ability {
 }
 
 const coworkingSpaceLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A51020482C6E4BFDE05323C6440AA466/RU%2F52%2F416?typeObject=CONFRM_V2&tabValue=list'
+const sportHallLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A51020482C6E4BFDE05323C6440AA466/RU%2F52%2F416?typeObject=SERVICE&tabValue=list&timeZone=&city=%D0%B3+%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9+%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4&categories=000001'
 
 @Component({
   selector: 'app-center',
@@ -35,7 +36,7 @@ export class Center implements OnInit {
     { name: 'программа лояльности' },
     { name: 'снеки' },
     { name: 'массажное кресло' },
-    { name: 'спортзал' },
+    { name: 'спортзал', link: sportHallLink, icon: './icons/strelka.svg' },
     { name: 'забронировать коворкинг', link: coworkingSpaceLink, icon: './icons/strelka.svg' },
     { name: 'обучения' },
     { name: 'забронировать переговорну зону', link: coworkingSpaceLink, icon: './icons/strelka.svg' },
