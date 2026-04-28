@@ -56,5 +56,10 @@ export class Loyalty {
       return next.length === 0 ? ['Все'] : next
     })
   }
+
+  ucFirst(str: string) {
+    if (!str) return str
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
 }
 

@@ -32,7 +32,6 @@ export class Able implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.startRotation();
-    setTimeout(() => this.adjustFontSize(), 100);
   }
 
   ngOnDestroy() {
@@ -49,34 +48,6 @@ export class Able implements AfterViewInit, OnDestroy {
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
-  }
-
-  private adjustFontSize() {
-    const element = this.currentAbility.nativeElement;
-    const container = element.parentElement;
-
-    if (!element || !container) return;
-
-    // Сбрасываем на базовый размер
-    element.style.fontSize = this.baseFontSize + 'em';
-
-    // Даем браузеру время применить стили
-    requestAnimationFrame(() => {
-      const containerHeight = container.clientHeight - 20; // Небольшой отступ
-      const textHeight = element.scrollHeight;
-
-      if (textHeight > containerHeight) {
-        // Вычисляем необходимый размер
-        const ratio = containerHeight / textHeight;
-        let newSize = this.baseFontSize * ratio;
-
-        // Применяем ограничения
-        newSize = Math.max(this.minFontSize, newSize);
-        newSize = Math.min(this.baseFontSize, newSize);
-
-        element.style.fontSize = newSize + 'em';
-      }
-    });
   }
 
   private changeAbility() {
@@ -96,9 +67,6 @@ export class Able implements AfterViewInit, OnDestroy {
       // Меняем текст
       this.currentIndex = (this.currentIndex + 1) % this.abilities.length;
       element.textContent = this.abilities[this.currentIndex];
-
-      // Настраиваем размер шрифта
-      this.adjustFontSize();
 
       // Меняем анимацию на появление
       element.classList.remove('fade-out-up');

@@ -1,12 +1,13 @@
 <app-block [title]="'Возможности центра'">
-  <div class="block">
+  <a class="block" href="/center">
     <div class="content">
       <div class="box">
         <h1>У нас есть: </h1>
-        <h1 class="what-good" #currentAbility>Снеки</h1>
+        <h1
+          class="what-good" #currentAbility>Снеки</h1>
       </div>
 
-      <a class="link" href="/center">
+      <div class="link">
         <div class="more">
           <img src="icons/strelka.svg">
             Подробнее
@@ -14,7 +15,7 @@
         <div class="background">
           <img src="bg/bg-5.png">
         </div>
-      </a>
+      </div>
     </div>
-  </div>
+  </a>
 </app-block>

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Block } from "../../../../components/block/block";
 import { RatingService } from '../../../../services/api/rating/rating';
 
@@ -8,14 +8,17 @@ import { RatingService } from '../../../../services/api/rating/rating';
   templateUrl: './review.html',
   styleUrl: './review.scss',
 })
-export class Review {
+export class Review implements OnInit {
   private rateService = inject(RatingService)
-
   currentRating = signal<number>(5)
 
+  ngOnInit() {
+    this.getCurrentRating()
+  }
+
   getCurrentRating() {
-    this.rateService.getRating().subscribe((val) => {
-      this.currentRating.set(val)
+    this.rateService.getReviews().subscribe((val) => {
+      this.currentRating.set(val.average)
     })
   }
 }

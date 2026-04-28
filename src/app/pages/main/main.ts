@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Block } from "../../components/block/block";
 import { Place } from "./elements/place/place";
 import { Start } from "./elements/start/start";
@@ -21,5 +21,4 @@ import { ViewportAnimationDirective } from '../../directives/viewport-animation'
   styleUrl: './main.scss',
 })
 export class Main {
-
 }
