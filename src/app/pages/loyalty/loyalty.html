@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="title">
+    <h1>Программа лояльности</h1>
+  </div>
+
+  <div class="filter-panel">
+    @for (cat of categories(); track cat) {
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategories().includes(cat)"
+        (click)="toggleFilter(cat)">
+        {{ cat }}
+      </button>
+    }
+  </div>
+
+  <div class="programm">
+    @for (group of filteredGroups(); track group[0]) {
+      <div class="group-section">
+        <h1 class="group-title">{{ group[0] }}</h1>
+
+        <div class="cards-grid">
+          @for (item of group[1]; track item.name) {
+            <label class="loyalty">
+              <h2>{{ item.name }}</h2>
+              <p>{{ item.text }}</p>
+
+              @if (item.phone) {
+                <div class="phone info-block">
+                  <img src="icons/phone.svg">
+                  <p>{{ item.phone }}</p>
+                </div>
+              }
+
+              @if (item.telegram) {
+                <div class="telegram info-block">
+                  <img src="icons/tg-logo.svg">
+                  <a [href]="item.telegram.link" target="_blank">{{ item.telegram.text }}</a>
+                </div>
+              }
+
+              @if (item.link) {
+                <div class="link info-block">
+                  <img src="icons/link.svg">
+                  <a [href]="item.link" target="_blank" class="truncate-link">{{ item.link }}</a>
+                </div>
+              }
+
+              @if (item.ard) {
+                <div class="addresses">
+                  @for (address of item.ard; track address) {
+                    <div class="address">
+                      <img src="icons/map-pin-svgrepo-com.svg">
+                      <p>{{ address }}</p>
+                    </div>
+                  }
+                </div>
+              }
+            </label>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

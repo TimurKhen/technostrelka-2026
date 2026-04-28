@@ -71,7 +71,26 @@
 }
 
 .filters {
-  margin-bottom: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $size-8;
+  margin: $size-12;
+
+  .filter-btn {
+    padding: $size-8 $size-16;
+    border-radius: $radius-full;
+    border: 1px solid $color-light-gray;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+
+    &.active {
+      background: $color-orange;
+      color: white;
+      border-color: #ffffff00;
+      box-shadow: 0 4px 10px rgba(33, 160, 56, 0.2);
+    }
+  }
 }

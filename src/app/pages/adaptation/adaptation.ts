@@ -20,25 +20,41 @@ interface CheckboxItem {
   styleUrl: './adaptation.scss',
 })
 export class Adaptation implements OnInit {
-  selectedDay: string = 'all'
+  selectedDays: string[] = ['all'];
 
-  allTasks: CheckboxItem[] = tasksData
-
-  completedIds: number[] = []
+  allTasks: CheckboxItem[] = tasksData;
+  completedIds: number[] = [];
 
   get filteredCheckboxes() {
-    const tasks = this.selectedDay === 'all'
+    const tasks = this.selectedDays.includes('all')
       ? this.allTasks
-      : this.allTasks.filter(item => item.day.toString() === this.selectedDay)
+      : this.allTasks.filter(item => this.selectedDays.includes(item.day.toString()));
 
     return tasks.map(task => ({
       ...task,
       checked: this.completedIds.includes(task.id)
-    }))
+    }));
   }
 
   get days() {
-    return [...new Set(this.allTasks.map(item => item.day.toString()))].sort()
+    return [...new Set(this.allTasks.map(item => item.day.toString()))].sort((a, b) => +a - +b);
+  }
+
+  toggleFilter(day: string) {
+    if (day === 'all') {
+      this.selectedDays = ['all'];
+      return;
+    }
+
+    let next = this.selectedDays.filter(d => d !== 'all');
+
+    if (next.includes(day)) {
+      next = next.filter(d => d !== day);
+    } else {
+      next.push(day);
+    }
+
+    this.selectedDays = next.length === 0 ? ['all'] : next;
   }
 
   ngOnInit() {

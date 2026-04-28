@@ -4,12 +4,21 @@
   </div>
 
   <div class="filters">
-    <mat-button-toggle-group [(ngModel)]="selectedDay" aria-label="Фильтр по дням">
-      <mat-button-toggle value="all">Все дни</mat-button-toggle>
-      @for (day of days; track day) {
-        <mat-button-toggle [value]="day">День {{ day }}</mat-button-toggle>
-      }
-    </mat-button-toggle-group>
+    <button
+      class="filter-btn"
+      [class.active]="selectedDays.includes('all')"
+      (click)="toggleFilter('all')">
+      Все
+    </button>
+
+    @for (day of days; track day) {
+      <button
+        class="filter-btn"
+        [class.active]="selectedDays.includes(day)"
+        (click)="toggleFilter(day)">
+        День {{ day }}
+      </button>
+    }
   </div>
 
   <div class="checklist">

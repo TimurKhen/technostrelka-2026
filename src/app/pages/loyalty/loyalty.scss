@@ -1,0 +1,147 @@
+@import 'variables';
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  margin-bottom: $size-80;
+
+  .title {
+    h1 {
+      margin: $size-12;
+    }
+  }
+
+  .programm {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: $size-12;
+
+    .loyalty {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $color-gray;
+      padding: $size-12;
+      border-radius: $radius-lg;
+      gap: $size-20;
+      color: black;
+      background: $color-light-gray;
+      justify-content: center;
+
+      a {
+        color: black;
+      }
+
+      .info-block {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: $size-8;
+        position: relative;
+        height: $size-40;
+
+        color: black;
+
+
+        img {
+          width: 10vw;
+        }
+      }
+
+      .phone {
+        img {
+          filter: invert(1);
+        }
+      }
+
+      .link {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: $size-8;
+        position: relative;
+
+        img {
+          filter: invert(1);
+          width: 10vw;
+        }
+      }
+
+      .addresses {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: $size-4;
+
+        .address {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: $size-8;
+          position: relative;
+
+          img {
+            width: 8vw;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.filters {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.group-title {
+  width: 100%;
+  margin: 40px 0 20px;
+  font-size: 1.7em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.truncate-link {
+  display: block;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.filter-panel {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $size-12;
+  margin: $size-12;
+
+  .filter-btn {
+    padding: $size-8 $size-20;
+    border-radius: $radius-full;
+    border: 1px solid $color-light-gray;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+
+    &.active {
+      background: $color-orange;
+      color: white;
+      border-color: #ffffff00;
+      box-shadow: 0 4px 10px rgba(33, 160, 56, 0.2);
+    }
+  }
+}
