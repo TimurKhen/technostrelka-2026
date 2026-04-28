@@ -23,7 +23,7 @@
           @for (item of group[1]; track item.name) {
             <label class="loyalty" appViewportAnimation>
               <h2>{{ item.name }}</h2>
-              <p [innerHTML]="item.text" style="white-space: pre-line;"s></p>
+              <p [innerHTML]="item.text"></p>
 
               @if (item.phone) {
                 <div class="phone info-block">
@@ -33,17 +33,17 @@
               }
 
               @if (item.telegram) {
-                <div class="telegram info-block">
+                <a [href]="item.telegram.link" target="_blank" class="telegram info-block">
                   <img src="icons/tg-logo.svg">
-                  <a [href]="item.telegram.link" target="_blank">{{ item.telegram.text }}</a>
-                </div>
+                  <p>{{ item.telegram.text }}</p>
+                </a>
               }
 
               @if (item.link) {
-                <div class="link info-block">
+                <a [href]="item.link" target="_blank" class="link">
                   <img src="icons/link.svg">
-                  <a [href]="item.link" target="_blank" class="truncate-link">{{ item.link }}</a>
-                </div>
+                  <p class="truncate-link">{{ item.link }}</p>
+                </a>
               }
 
               @if (item.adr) {
