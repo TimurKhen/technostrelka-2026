@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="head">
+    <p>Написать отзыв</p>
+    <button class="close" (click)="close($event)">
+      <img src="icons/add-icon.svg">
+    </button>
+  </div>
+
+  <div class="rating">
+    <app-rating [currentStarInput]="currentStars()" (starsCountChanged)="starsChange($event)"></app-rating>
+  </div>
+
+  <div class="inputs">
+    <form class="example-form" [formGroup]="reviewForm">
+      <div class="inputs">
+        <label>
+            <p>Имя:</p>
+            <input maxlength="70" placeholder="Имя" formControlName="username">
+        </label>
+        <label>
+            <p>Email:</p>
+            <input maxlength="70" placeholder="email" formControlName="email">
+        </label>
+        <label>
+            <p>Отзыв:</p>
+            <textarea maxlength="1000" cols="40" placeholder="Ваш отзыв" formControlName="comment"></textarea>
+            <p
+                class="text-count"
+                [ngClass]="{'active': reviewForm.get('comment')?.value?.length}"
+                >
+                {{ reviewForm.get('comment')?.value?.length }} / 1000
+            </p>
+        </label>
+      </div>
+    </form>
+    <button class="publish-button" (click)="publish($event)">
+      Опубликовать
+    </button>
+  </div>
+</div>

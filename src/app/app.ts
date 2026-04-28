@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navigation } from "./components/navigation/navigation";
+import { AlertService } from './services/ui/alert/alert.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,12 @@ import { Navigation } from "./components/navigation/navigation";
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('technostrelka-2026');
+  protected readonly title = signal('technostrelka-2026')
+
+  constructor(
+    private alertService: AlertService,
+    private vcr: ViewContainerRef
+  ) {
+    this.alertService.setContainer(this.vcr)
+  }
 }

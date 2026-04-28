@@ -1,0 +1,11 @@
+<div class="rating_container">
+  @for (item of stars; track item) {
+    <span appSystemIconsStyles class="star" (click)="changeCurrentStar(item)">
+      @if (item <= currentStar()) {
+        <img src="icons/Star_checked.svg" width="30" height="30">
+      } @else {
+        <img src="icons/Star_unchecked.svg" width="30" height="30">
+      }
+    </span>
+  }
+</div>

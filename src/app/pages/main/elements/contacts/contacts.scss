@@ -33,13 +33,13 @@ app-block {
       .header-hr {
         height: $size-4;
       }
-
-      hr {
-        width: 100%;
-        border-radius: $radius-full;
-        background: $color-white;
-        opacity: 0.15;
-      }
     }
   }
+}
+
+hr {
+  width: 100%;
+  border-radius: $radius-full;
+  background: $color-white;
+  opacity: 0.15;
 }

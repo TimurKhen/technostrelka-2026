@@ -15,13 +15,13 @@ export class AlertService {
 
   async show(title: string = '', message: string = '', isError: boolean = false) {
     this.hide()
-    
+
     if (!this.loadPromise) {
       this.loadPromise = import('./alert/alert.component').then(m => m.AlertComponent);
     }
-    
+
     const componentType = await this.loadPromise
-    
+
     this.container.injector.get(NgZone).run(() => {
       this.componentRef = this.container.createComponent(componentType)
       this.componentRef.setInput('isError', isError)

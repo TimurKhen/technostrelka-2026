@@ -35,7 +35,7 @@
 
   <app-life-in></app-life-in>
 
-  <h2>Фото</h2>
+  <h2>Наш офис</h2>
   <div class="scroll-container">
     <div class="images">
       @for (photo of photos; track $index) {
@@ -48,7 +48,17 @@
 
 
   <div class="review-container">
-
+    <p>Оценка и отзывы</p>
+    <h2>{{ rating() }}/5</h2>
+    <div class="review-create">
+      Оцените и напишите отзыв
+      <app-rating [currentStarInput]="currentStars()" (starsCountChanged)="rate($event)"></app-rating>
+    </div>
+    <div class="reviews">
+      @for (item of reviews(); track item) {
+        <app-review [review]="item"></app-review>
+      }
+    </div>
   </div>
 </div>
 
@@ -70,7 +80,3 @@
     }
 
 </app-popup>
-
-
-<!--  TODO -->
-<!--   ОТЗЫВЫ надо сюда добавить, а там посмотрим. -->

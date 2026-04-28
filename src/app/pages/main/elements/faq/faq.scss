@@ -30,13 +30,13 @@ app-block {
         p {
           font-size: 1.2em;
         }
+      }
 
-        hr {
-          width: 100%;
-          border-radius: $radius-full;
-          background: $color-white;
-          opacity: 0.15;
-        }
+      hr {
+        width: 100%;
+        border-radius: $radius-full;
+        background: $color-white;
+        opacity: 0.15;
       }
 
       .header-hr {
