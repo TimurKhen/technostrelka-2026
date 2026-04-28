@@ -37,7 +37,7 @@ npm install -g angular-http-server
 
 Перейдите в папку с приложением 
 ``` bash
-cd dist/gzg-money/browser
+cd dist/technostrelka-2026/browser
 ``` 
 Запустите
 ``` bash
