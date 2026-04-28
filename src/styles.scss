@@ -37,3 +37,11 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+@media screen and (min-width: 1024px) {
+  .container, body > app-root > *:not(app-header) {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
