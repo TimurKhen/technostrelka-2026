@@ -17,8 +17,41 @@
     flex-direction: column;
     margin-top: $size-20;
 
+    .head {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: $size-12;
+
+      h2 {
+        margin: 0;
+        flex: 1;
+        word-break: break-word;
+        line-height: 1.2;
+      }
+
+      app-rating {
+        height: $size-20;
+        flex-shrink: 0;
+        display: block;
+      }
+    }
+
+
     h2 {
       margin: 0;
+    }
+
+    p {
+      margin: 0;
+      width: 100%;
+
+      // ❗ Эти свойства отвечают за перенос:
+      white-space: pre-wrap;    // Сохраняет переносы строк из базы данных (Enter)
+      word-break: break-word;   // Разрывает слишком длинные слова, чтобы не вылезали за край
+      overflow-wrap: break-word; // Современный стандарт для переноса слов
+      line-height: 1.5;         // Делает текст более читаемым
     }
   }
 

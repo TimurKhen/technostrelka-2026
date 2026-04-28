@@ -1,15 +1,29 @@
+@import 'variables';
+
+:host {
+  display: block;
+  height: 100%;
+}
+
 .rating_container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: 30px;
-  gap: 10px;
+  gap: clamp($size-4, 2%, $size-20);
+  height: 100%;
+  width: 100%;
 
   .star {
-    width: 30px;
-    height: 30px;
+    height: 100%;
     display: flex;
-    align-self: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      height: 100%;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
   }
 }

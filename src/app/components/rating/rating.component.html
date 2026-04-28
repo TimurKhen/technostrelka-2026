@@ -2,9 +2,9 @@
   @for (item of stars; track item) {
     <span appSystemIconsStyles class="star" (click)="changeCurrentStar(item)">
       @if (item <= currentStar()) {
-        <img src="icons/Star_checked.svg" width="30" height="30">
+        <img src="icons/Star_checked.svg" alt="star">
       } @else {
-        <img src="icons/Star_unchecked.svg" width="30" height="30">
+        <img src="icons/Star_unchecked.svg" alt="star">
       }
     </span>
   }

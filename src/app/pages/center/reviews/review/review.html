@@ -1,6 +1,12 @@
 <div class="review">
   <div class="content">
-    <h2>{{ review()?.username }}</h2>
+    <div class="head">
+      <h2>{{ review()?.username }}</h2>
+
+      <app-rating
+        [currentStarInput]="review()?.mark!" [readOnly]="true">
+      </app-rating>
+    </div>
     <p>{{ review()?.comment }}</p>
   </div>
 

@@ -13,7 +13,8 @@ import {
 } from '@angular/material/bottom-sheet';
 import { RatingComponent } from "../../components/rating/rating.component";
 import { ViewportAnimationDirective } from '../../directives/viewport-animation';
-import { NgClass } from '@angular/common';
+import { NgClass, ViewportScroller } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 interface Ability {
   name: string;
@@ -36,6 +37,9 @@ const sportHallLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A
 export class Center implements OnInit {
   private _bottomSheet = inject(MatBottomSheet)
   private rateService = inject(RatingService)
+
+  private scroller = inject(ViewportScroller)
+  private route = inject(ActivatedRoute)
 
   abilities: Ability[] = [
     { name: 'программа лояльности', link: '../loyality', icon: './icons/strelka.svg', target: '_self' },
@@ -60,6 +64,19 @@ export class Center implements OnInit {
     if (rated) {
       this.isRated.set(true);
     }
+
+    this.route.fragment.subscribe(frag => {
+      if (frag) {
+        setTimeout(() => {
+          this.scroller.scrollToAnchor(frag)
+
+          document.getElementById(frag)?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }, 250)
+      }
+    })
   }
 
   openPhoto(photo: string) {

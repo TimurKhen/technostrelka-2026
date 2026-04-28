@@ -148,7 +148,6 @@
     width: 100%;
 
     .review-create {
-      scroll-margin-top: -10rem;
       width: 90%;
       background: $color-gray;
 
@@ -159,6 +158,10 @@
 
       border-radius: $radius-lg;
       padding: $size-20;
+
+      app-rating {
+        height: $size-40;
+      }
 
       .thanks-message {
         text-align: center;

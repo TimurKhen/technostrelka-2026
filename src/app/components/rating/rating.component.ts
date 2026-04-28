@@ -14,6 +14,7 @@ import { SystemIconsStylesDirective } from '../../directives/system-icons-styles
 export class RatingComponent implements OnChanges {
   stars = [1, 2, 3, 4, 5]
   currentStarInput = input<number>(0)
+  readOnly = input<boolean>(false)
   currentStar = signal<number>(0)
   starsCountChanged = output<number>()
 
@@ -27,8 +28,10 @@ export class RatingComponent implements OnChanges {
   }
 
   changeCurrentStar(item: number) {
-    this.currentStar.set(item)
-    this.postStarData()
+    if (!this.readOnly()) {
+      this.currentStar.set(item)
+      this.postStarData()
+    }
   }
 
   postStarData() {

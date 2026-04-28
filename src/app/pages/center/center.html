@@ -48,9 +48,9 @@
 
 
   <div class="review-container">
-    <p>Оценка и отзывы</p>
+    <p id="reviews">Оценка и отзывы</p>
     <h2 appViewportAnimation>{{ rating() }}/5</h2>
-    <div id="reviews" class="review-create" [ngClass]="{'orange': isRated()}">
+    <div class="review-create" [ngClass]="{'orange': isRated()}">
       @if (isRated()) {
         <div class="thanks-message">
           <h2>Спасибо за оценку!</h2>
