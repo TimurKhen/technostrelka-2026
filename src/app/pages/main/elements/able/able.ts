@@ -56,23 +56,17 @@ export class Able implements AfterViewInit, OnDestroy {
     this.isAnimating = true;
     const element = this.currentAbility.nativeElement;
 
-    // Убираем возможные предыдущие классы анимации
     element.classList.remove('fade-in-up');
 
-    // Добавляем анимацию ухода вверх
     element.classList.add('fade-out-up');
 
-    // Ждем завершения анимации ухода
     setTimeout(() => {
-      // Меняем текст
       this.currentIndex = (this.currentIndex + 1) % this.abilities.length;
       element.textContent = this.abilities[this.currentIndex];
 
-      // Меняем анимацию на появление
       element.classList.remove('fade-out-up');
       element.classList.add('fade-in-up');
 
-      // Очищаем классы после завершения
       setTimeout(() => {
         element.classList.remove('fade-in-up');
         this.isAnimating = false;

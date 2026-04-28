@@ -1,10 +1,8 @@
 @if (isShow()) {
-  <!-- Анимация затемнения фона -->
   <div class="popup-container"
        @simpleFade
        (click)="onClose()">
 
-    <!-- Анимация самого окна -->
     <div class="popup"
         @simpleFade
         (click)="$event.stopPropagation()">

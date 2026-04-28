@@ -4,7 +4,6 @@
   width: 100%;
   height: auto;
   border: none;
-  // overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +12,8 @@
 
   .head {
     margin: 0;
-    // background: $color-light-orange;
     width: max-content;
     padding: $size-16;
-    // border-radius: $radius-full;
     line-height: 0.5lh;
     color: black;
   }
