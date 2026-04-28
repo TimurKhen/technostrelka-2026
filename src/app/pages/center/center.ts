@@ -12,6 +12,7 @@ import {
   MatBottomSheetModule,
 } from '@angular/material/bottom-sheet';
 import { RatingComponent } from "../../components/rating/rating.component";
+import { ViewportAnimationDirective } from '../../directives/viewport-animation';
 
 interface Ability {
   name: string;
@@ -24,7 +25,10 @@ const sportHallLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A
 
 @Component({
   selector: 'app-center',
-  imports: [WhatWillBe, LifeIn, Popup, ReviewCreate, Review, MatBottomSheetModule, RatingComponent],
+  imports: [WhatWillBe, LifeIn, Popup, ReviewCreate,
+    Review, MatBottomSheetModule, RatingComponent,
+    ViewportAnimationDirective
+  ],
   templateUrl: './center.html',
   styleUrl: './center.scss',
 })

@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="place">
+  <div class="place" appViewportAnimation>
     <p>Наш адрес:</p>
     <h1>Нижний Новгород, Костина 6</h1>
   </div>
-  <div class="mission">
+  <div class="mission" appViewportAnimation>
     <p>Наша миссия</p>
     <h3>
       Мы создаем решения для развития бизнеса
@@ -13,7 +13,7 @@
     </h3>
   </div>
 
-  <div class="abilities-container">
+  <div class="abilities-container" appViewportAnimation>
     <h1>Возможности</h1>
     <div class="abilities">
       @for (item of abilities; track item.name) {
@@ -36,7 +36,7 @@
   <app-life-in></app-life-in>
 
   <h2>Наш офис</h2>
-  <div class="scroll-container">
+  <div appViewportAnimation class="scroll-container">
     <div id="images" class="images">
       @for (photo of photos; track $index) {
         <img
@@ -49,7 +49,7 @@
 
   <div class="review-container">
     <p>Оценка и отзывы</p>
-    <h2>{{ rating() }}/5</h2>
+    <h2 appViewportAnimation>{{ rating() }}/5</h2>
     <div id="reviews" class="review-create">
       Оцените и напишите отзыв
       <app-rating [currentStarInput]="currentStars()" (starsCountChanged)="rate($event)"></app-rating>
