@@ -122,7 +122,7 @@
       gap: $size-12;
       padding: $size-12;
       overflow: scroll;
-      scroll-margin-top: calc(-1 * $size-80 / 1.5);
+      scroll-margin-top: -10rem;
 
       img {
         width: 100%;
@@ -147,7 +147,7 @@
     width: 100%;
 
     .review-create {
-      scroll-margin-top: $size-120;
+      scroll-margin-top: -4rem;
       width: 100%;
       padding: $size-20;
       background: $color-gray;
