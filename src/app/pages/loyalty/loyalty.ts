@@ -11,7 +11,7 @@ interface LoyaltyInterface {
     link: string
   } | null,
   link: string | null,
-  ard: string[] | null
+  adr: string[] | null
 }
 
 @Component({
@@ -21,31 +21,24 @@ interface LoyaltyInterface {
   styleUrl: './loyalty.scss',
 })
 export class Loyalty {
-  allLoyalty: LoyaltyInterface[] = loyalties
+  private rawData: any = loyalties
+
+  allLoyalty: LoyaltyInterface[] = Object.values(this.rawData).flat() as LoyaltyInterface[]
 
   selectedCategories = signal<string[]>(['Все'])
 
   categories = computed(() => {
-    const cats = new Set<string>()
-    this.allLoyalty.forEach(item => {
-      item.ard?.forEach(cat => cats.add(cat))
-    })
-    return ['Все', ...Array.from(cats).sort()]
+    return ['Все', ...Object.keys(this.rawData).sort()]
   })
 
   filteredGroups = computed(() => {
     const activeFilters = this.selectedCategories()
     const groups: { [key: string]: LoyaltyInterface[] } = {}
 
-    this.allLoyalty.forEach(item => {
-      const itemCats = item.ard || ['Прочее']
-
-      itemCats.forEach(cat => {
-        if (activeFilters.includes('Все') || activeFilters.includes(cat)) {
-          if (!groups[cat]) groups[cat] = []
-          if (!groups[cat].includes(item)) groups[cat].push(item)
-        }
-      })
+    Object.keys(this.rawData).forEach(categoryName => {
+      if (activeFilters.includes('Все') || activeFilters.includes(categoryName)) {
+        groups[categoryName] = this.rawData[categoryName]
+      }
     })
 
     return Object.entries(groups)
@@ -54,16 +47,14 @@ export class Loyalty {
   toggleFilter(category: string) {
     this.selectedCategories.update(current => {
       if (category === 'Все') return ['Все']
-
       let next = current.filter(c => c !== 'Все')
-
       if (next.includes(category)) {
         next = next.filter(c => c !== category)
       } else {
         next.push(category)
       }
-
       return next.length === 0 ? ['Все'] : next
-   })
+    })
   }
 }
+

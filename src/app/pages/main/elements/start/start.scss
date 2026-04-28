@@ -47,13 +47,28 @@ app-block {
       .bg-1 {
         left: 0;
         top: 0;
+
+        animation: rotatingAnimation 45s infinite;
       }
 
       .bg-2 {
         right: calc($size-80 * -1);
         bottom: calc($size-80 * -1);
+
+        animation: rotatingAnimation 38s infinite;
       }
     }
   }
+}
 
+@keyframes rotatingAnimation {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(180deg) translateY(20px);
+  }
+  100% {
+    transform: rotate(360deg) translateY(0);
+  }
 }

@@ -108,6 +108,8 @@ app-block {
             position: absolute;
             top: -5%;
             right: -25%;
+
+            animation: rotatingAnimation 25s infinite;
           }
         }
       }
@@ -115,7 +117,6 @@ app-block {
   }
 }
 
-// Анимации должны быть глобальными или в правильной области видимости
 @keyframes fadeOutUp {
   0% {
     opacity: 1;
@@ -135,5 +136,17 @@ app-block {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes rotatingAnimation {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(180deg) translateY(20px);
+  }
+  100% {
+    transform: rotate(360deg) translateY(0);
   }
 }

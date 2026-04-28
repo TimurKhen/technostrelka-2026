@@ -29,6 +29,8 @@
     img {
       width: 100%;
       height: 100%;
+
+      animation: rotatingAnimation 30s infinite;
     }
   }
 
@@ -40,5 +42,17 @@
 @keyframes rotateGradient {
   to {
     --angle: 360deg;
+  }
+}
+
+@keyframes rotatingAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

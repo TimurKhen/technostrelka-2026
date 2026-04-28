@@ -23,7 +23,7 @@
           @for (item of group[1]; track item.name) {
             <label class="loyalty" appViewportAnimation>
               <h2>{{ item.name }}</h2>
-              <p>{{ item.text }}</p>
+              <p [innerHTML]="item.text" style="white-space: pre-line;"s></p>
 
               @if (item.phone) {
                 <div class="phone info-block">
@@ -46,9 +46,9 @@
                 </div>
               }
 
-              @if (item.ard) {
+              @if (item.adr) {
                 <div class="addresses">
-                  @for (address of item.ard; track address) {
+                  @for (address of item.adr; track address) {
                     <div class="address">
                       <img src="icons/map-pin-svgrepo-com.svg">
                       <p>{{ address }}</p>
