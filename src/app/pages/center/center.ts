@@ -77,9 +77,12 @@ export class Center implements OnInit {
 
     sheetRef.instance.currentStars.set(value)
 
-    sheetRef.instance.closeForm.subscribe((v: number) => {
-      this.currentStars.set(v)
+    sheetRef.instance.closeForm.subscribe((v: [number, boolean]) => {
+      this.currentStars.set(v[0])
       this.closeBottomSheet()
+      if (v[1]) {
+        this.isRated.set(true)
+      }
     })
   }
 

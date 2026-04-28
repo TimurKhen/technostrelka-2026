@@ -20,7 +20,7 @@ export class ReviewCreate {
   private alert = inject(AlertService)
 
   maxLength = 250
-  closeForm = output<number>()
+  closeForm = output<[number, boolean]>()
   isLoading = signal<boolean>(false)
 
   reviewForm = new FormGroup({
@@ -63,11 +63,12 @@ export class ReviewCreate {
         false
       ),
       localStorage.setItem('user-rated', 'true')
+      this.closeForm.emit([this.currentStars(), true])
     })
   }
 
   close($event: Event | undefined) {
     if ($event) $event.preventDefault()
-    this.closeForm.emit(this.currentStars())
+    this.closeForm.emit([this.currentStars(), false])
   }
 }
