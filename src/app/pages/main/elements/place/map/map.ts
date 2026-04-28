@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -7,5 +7,9 @@ import { AfterContentInit, Component, ElementRef, Renderer2, ViewChild } from '@
   styleUrl: './map.scss',
 })
 export class Map {
+  isLoaded = signal<boolean>(false)
 
+  onLoad() {
+    this.isLoaded.set(true)
+  }
 }

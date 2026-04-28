@@ -1,3 +1,46 @@
+@import 'variables';
+
+.container {
+  width: 100%;
+  position: relative;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
 iframe {
   width: 100%;
+}
+
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: $size-200;
+  background-color: $color-gray;
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(52, 52, 52, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: $size-200 100%;
+  animation: loading 1.5s infinite;
+  border-radius: $size-4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $radius-lg;
+}
+
+@keyframes loading {
+  0% {
+    background-position: -150px 0;
+  }
+  100% {
+    background-position: calc(200px + 150px) 0;
+  }
 }
