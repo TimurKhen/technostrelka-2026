@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="title">
+    <h1>Чеклист новичка</h1>
+  </div>
+
+  <div class="filters">
+    <mat-button-toggle-group [(ngModel)]="selectedDay" aria-label="Фильтр по дням">
+      <mat-button-toggle value="all">Все дни</mat-button-toggle>
+      @for (day of days; track day) {
+        <mat-button-toggle [value]="day">День {{ day }}</mat-button-toggle>
+      }
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="checklist">
+    @for (item of filteredCheckboxes; track item.id) {
+      <label class="checkbox-item">
+        <input
+          type="checkbox"
+          [id]="item.id"
+          [(ngModel)]="item.checked"
+          (change)="saveProgress()"
+        >
+        <div class="text-info" [class.completed]="item.checked">
+          <span>{{ item.text }}</span>
+          <p>День {{ item.day }}</p>
+        </div>
+      </label>
+    }
+  </div>
+</div>

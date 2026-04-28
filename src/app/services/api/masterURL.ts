@@ -1,1 +1,1 @@
-export const masterURL = 'https://zakhar.online'
+export const masterURL = 'https://gzg-win.zakhar.online/api'

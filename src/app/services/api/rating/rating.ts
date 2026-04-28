@@ -11,7 +11,7 @@ import { ReviewInterface } from '../../../interfaces/review/review';
 export class RatingService {
   private http = inject(HttpClient)
   private alert = inject(AlertService)
-  private rateUrl = masterURL + '/'
+  private rateUrl = masterURL + '/review/'
 
   rate(inforamtion: {
     username: string,
@@ -21,10 +21,15 @@ export class RatingService {
   }) {
 
     return this.http.post(
-      this.rateUrl,
+      this.rateUrl + 'create',
       JSON.stringify(
         inforamtion
-      )
+      ),
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
     ).pipe(
       catchError((err) => {
         this.alert.show(
@@ -39,6 +44,6 @@ export class RatingService {
   }
 
   getReviews() {
-    return this.http.get<ReviewInterface[]>(this.rateUrl)
+    return this.http.get<ReviewInterface[]>(this.rateUrl + 'get')
   }
 }
