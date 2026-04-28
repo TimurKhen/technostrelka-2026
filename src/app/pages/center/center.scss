@@ -40,26 +40,27 @@
 
   .mission {
     width: 90%;
+    aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-
-    background: $color-orange;
     border-radius: $radius-lg;
-
     padding: $size-12;
+    background: $color-orange;
 
     p {
       margin: 0;
       font-weight: bolder;
+      z-index: 2;
     }
 
     h3 {
       color: $color-white;
       text-align: center;
       padding: 0 $size-24;
+      z-index: 2;
     }
   }
 
@@ -211,20 +212,6 @@
   }
 }
 
-
-
-@keyframes appear-animation {
-  from {
-    opacity: 0;
-    transform: translateY(20px) rotate(30deg);
-  }
-  to {
-    opacity: 0.3;
-    transform: translateY(0) rotate(0deg);
-  }
-}
-
-
 app-popup {
   position: relative;
 
@@ -260,5 +247,16 @@ app-popup {
       display: block;
       border-radius: $radius-lg;
     }
+  }
+}
+
+@keyframes appear-animation {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotate(30deg);
+  }
+  to {
+    opacity: 0.3;
+    transform: translateY(0) rotate(0deg);
   }
 }

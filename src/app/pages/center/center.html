@@ -38,7 +38,7 @@
   <h2>Наш офис</h2>
   <div appViewportAnimation class="scroll-container">
     <div id="images" class="images">
-      @for (photo of photos; track $index) {
+      @for (photo of photos(); track $index) {
         <img
           src="photos/{{ photo }}.jpeg" alt="Фото {{ photo }}"
           loading="lazy" (click)="openPhoto(photo)">
@@ -59,6 +59,7 @@
       } @else {
         Оцените и напишите отзыв
         <app-rating
+          appViewportAnimation
           [currentStarInput]="currentStars()"
           (starsCountChanged)="rate($event)">
         </app-rating>

@@ -6,9 +6,11 @@
   align-items: center;
   height: 110dvh;
   padding: $size-100 0;
+  position: relative;
 
   background: radial-gradient(circle at 50% 300%, $color-yellow, $color-orange);
   gap: 5%;
+  overflow: hidden;
 
   .head {
     width: 100%;

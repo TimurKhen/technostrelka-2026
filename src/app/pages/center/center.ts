@@ -6,7 +6,6 @@ import { Popup } from "../../components/popup/popup";
 import { ReviewCreate } from "./reviews/review-create/review-create";
 import { Review } from "./reviews/review/review";
 import { ReviewInterface } from '../../interfaces/review/review';
-
 import {
   MatBottomSheet,
   MatBottomSheetModule,
@@ -15,6 +14,7 @@ import { RatingComponent } from "../../components/rating/rating.component";
 import { ViewportAnimationDirective } from '../../directives/viewport-animation';
 import { NgClass, ViewportScroller } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import photos from './photos.json'
 
 interface Ability {
   name: string;
@@ -37,7 +37,6 @@ const sportHallLink = 'https://sberfriend.sberbank.ru/sberfriend/#/application/A
 export class Center implements OnInit {
   private _bottomSheet = inject(MatBottomSheet)
   private rateService = inject(RatingService)
-
   private scroller = inject(ViewportScroller)
   private route = inject(ActivatedRoute)
 
@@ -52,17 +51,18 @@ export class Center implements OnInit {
     { name: 'удобное расположение' }
   ]
 
-  photos = ['1', '2', '3', '4']
+  photos = signal<string[]>(photos)
+
   isRated = signal<boolean>(false)
   selectedPhoto = signal<string | null>(null)
   rating = signal<number>(5)
   currentStars = signal<number>(0)
 
   ngOnInit(): void {
-    this.getReviews();
-    const rated = localStorage.getItem('user-rated');
+    this.getReviews()
+    const rated = localStorage.getItem('user-rated')
     if (rated) {
-      this.isRated.set(true);
+      this.isRated.set(true)
     }
 
     this.route.fragment.subscribe(frag => {
