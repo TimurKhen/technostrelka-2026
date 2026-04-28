@@ -44,6 +44,10 @@ export class RatingService {
   }
 
   getReviews() {
-    return this.http.get<ReviewInterface[]>(this.rateUrl + 'get')
+    return this.http.get<{reviews: ReviewInterface[], average: number}>(this.rateUrl + 'get')
+  }
+
+  getRating() {
+    return this.http.get<number>(this.rateUrl)
   }
 }

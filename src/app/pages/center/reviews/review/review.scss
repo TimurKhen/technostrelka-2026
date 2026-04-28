@@ -1,0 +1,28 @@
+@import 'variables';
+
+.review {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  border: 1px solid black;
+  border-radius: $radius-lg;
+  padding: 0 $size-20;
+  gap: $size-12;
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: $size-20;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .date {
+    color: $color-gray;
+  }
+}

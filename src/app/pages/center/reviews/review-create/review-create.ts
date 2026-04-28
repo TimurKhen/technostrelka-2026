@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { RatingService } from '../../../../services/api/rating/rating';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-review-create',
@@ -17,6 +18,7 @@ export class ReviewCreate {
   private ratingService = inject(RatingService)
   maxLength = 250
   closeForm = output<number>()
+  isLoading = signal<boolean>(false)
 
   reviewForm = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -32,6 +34,7 @@ export class ReviewCreate {
   publish($event: Event) {
     $event.preventDefault()
 
+    this.isLoading.set(true)
     const formValues = this.reviewForm.value
 
     this.ratingService.rate(
@@ -41,7 +44,15 @@ export class ReviewCreate {
         comment: formValues.comment!,
         mark: this.currentStars()
       }
-    ).subscribe(() => {
+    )
+    .pipe(
+      catchError((err) => {
+        this.isLoading.set(false)
+        return throwError(err)
+      })
+    )
+    .subscribe(() => {
+      this.isLoading.set(false)
       this.close(undefined)
     })
   }

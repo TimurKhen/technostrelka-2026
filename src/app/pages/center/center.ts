@@ -1,5 +1,5 @@
 import { RatingService } from './../../services/api/rating/rating';
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { WhatWillBe } from "../main/elements/what-will-be/what-will-be";
 import { LifeIn } from "../main/life-in/life-in";
 import { Popup } from "../../components/popup/popup";
@@ -27,7 +27,7 @@ const coworkingSpaceLink = 'https://sberfriend.sberbank.ru/sberfriend/#/applicat
   templateUrl: './center.html',
   styleUrl: './center.scss',
 })
-export class Center {
+export class Center implements OnInit {
   private _bottomSheet = inject(MatBottomSheet)
   private rateService = inject(RatingService)
 
@@ -78,7 +78,12 @@ export class Center {
 
   getReviews() {
     this.rateService.getReviews().subscribe((val) => {
-      this.reviews.set(val)
+      this.reviews.set(val.reviews)
+      this.rating.set(val.average)
     })
+  }
+
+  ngOnInit(): void {
+    this.getReviews()
   }
 }

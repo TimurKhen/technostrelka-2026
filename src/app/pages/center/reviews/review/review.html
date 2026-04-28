@@ -1,9 +1,8 @@
 <div class="review">
   <div class="content">
     <h2>{{ review()?.username }}</h2>
-    <hr>
     <p>{{ review()?.comment }}</p>
   </div>
 
-  <p>{{ review()?.created_at | timeAgoPipe }}</p>
+  <p class="date">{{ review()?.created_at | timeAgoPipe }}</p>
 </div>
