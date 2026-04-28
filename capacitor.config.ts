@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.example.app',
-  appName: 'HUB NN',
+  appName: 'technostrelka-2026',
   webDir: 'dist/technostrelka-2026/browser'
 };
 
