@@ -53,14 +53,6 @@ angular-http-server --open
 npm install @capacitor/core @capacitor/cli
 ```
 
-Инициализируйте capacitor
-``` bash 
-npx cap init
-```
-Рекомендуемое название: `gzgs`
-
-(дальше просто нажимать enter)
-
 ## Android
 `Необходимо иметь android studio`
 
