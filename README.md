@@ -57,6 +57,10 @@ npm install @capacitor/core @capacitor/cli
 `Необходимо иметь android studio`
 
 ``` bash
+npm install @capacitor/android
+```
+
+``` bash
 npx cap add android
 ```
 
