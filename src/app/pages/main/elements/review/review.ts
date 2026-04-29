@@ -21,4 +21,13 @@ export class Review implements OnInit {
       this.currentRating.set(val.average)
     })
   }
+
+  transformValue(value: number): number {
+    if (Number.isInteger(value)) {
+      return value
+    }
+
+    return Number(value.toFixed(1))
+  }
+
 }

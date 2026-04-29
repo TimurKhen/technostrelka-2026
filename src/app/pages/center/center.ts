@@ -117,4 +117,12 @@ export class Center implements OnInit {
       this.rating.set(val.average)
     })
   }
+
+  transformValue(value: number): number {
+    if (Number.isInteger(value)) {
+      return value
+    }
+
+    return Number(value.toFixed(1))
+  }
 }
