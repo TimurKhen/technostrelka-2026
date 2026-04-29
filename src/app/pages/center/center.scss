@@ -134,6 +134,7 @@
         display: block;
         border-radius: $radius-lg;
         flex-shrink: 0;
+        max-height: $size-600;
       }
     }
   }
